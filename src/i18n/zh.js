@@ -1,4 +1,4 @@
-import englishMessages from 'ra-language-english';
+import englishMessages from 'ra-language-chinese';
 
 export default {
     ...englishMessages,

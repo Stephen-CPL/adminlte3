@@ -25,7 +25,7 @@ const i18nProvider = locale => {
     if (locale === 'fr') {
         return import('./i18n/fr').then(messages => messages.default);
     }
-    else if (locale === 'zh') {
+    else if (locale === 'zh_TW') {
         return import('./i18n/zh').then(messages => messages.default);
     }
 
@@ -37,6 +37,8 @@ class App extends Component {
     state = { dataProvider: null };
 
     async componentWillMount() {
+        
+        console.log(process.env.USE_FAKE_SERVER);
         this.restoreFetch = await fakeServerFactory(
             process.env.REACT_APP_DATA_PROVIDER
         );
